@@ -1,0 +1,32 @@
+#
+# This file is part of LiteDRAM.
+#
+# Copyright (c) 2021 Florent Kermarrec <florent@enjoy-digital.fr>
+# SPDX-License-Identifier: BSD-2-Clause
+
+{
+    # General ------------------------------------------------------------------
+    "device":  "ice40-hx8k-tq144:4k", # FPGA device.
+    "cpu":     "None",              # CPU type (ex vexriscv, serv, None)
+    "memtype": "SDR",               # DRAM type
+
+    # PHY ----------------------------------------------------------------------
+    "sdram_module":    "MT48LC32M8", # SDRAM modules of the board or SO-DIMM
+    "sdram_module_nb": 2,             # Number of byte groups
+    "sdram_phy":       "GENSDRPHY",   # Type of FPGA PHY
+
+    # Frequency ----------------------------------------------------------------
+    "sys_clk_freq":     50e6,  # System clock frequency (SDR_clk = sys_clk)
+
+    # Core ---------------------------------------------------------------------
+    "cmd_buffer_depth": 16,    # Depth of the command buffer
+
+    # User Ports ---------------------------------------------------------------
+    "user_ports": {
+        "wishbone_0" : {
+            "type": "wishbone",
+            "dw" : 16,
+            "aw" : 16,
+        },
+    },
+}

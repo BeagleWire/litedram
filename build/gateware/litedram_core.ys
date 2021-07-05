@@ -1,0 +1,6 @@
+verilog_defaults -push
+verilog_defaults -add -defer
+read_verilog /home/omkar/Desktop/beaglewire-litedram/build/gateware/litedram_core.v
+verilog_defaults -pop
+attrmap -tocase keep -imap keep="true" keep=1 -imap keep="false" keep=0 -remove keep=0
+synth_ice40  -json litedram_core.json -top litedram_core -dsp
