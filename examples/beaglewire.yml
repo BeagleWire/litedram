@@ -12,7 +12,7 @@
 
     # PHY ----------------------------------------------------------------------
     "sdram_module":    "MT48LC32M8", # SDRAM modules of the board or SO-DIMM
-    "sdram_module_nb": 2,             # Number of byte groups
+    "sdram_module_nb":  1,             # Number of byte groups
     "sdram_phy":       "GENSDRPHY",   # Type of FPGA PHY
 
     # Frequency ----------------------------------------------------------------
@@ -25,8 +25,7 @@
     "user_ports": {
         "wishbone_0" : {
             "type": "wishbone",
-            "dw" : 16,
-            "aw" : 16,
+            "data_width": 16,
         },
     },
 }
